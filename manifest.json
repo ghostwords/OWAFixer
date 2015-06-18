@@ -1,0 +1,32 @@
+{
+	"manifest_version": 2,
+	"name": "OWAFixer",
+	"version": "0.1.0",
+	"description": "Bad Outlook Web App light version, BAD!",
+	"icons": {
+	},
+	"author": "ghostwords",
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"content_scripts": [
+		{
+			"all_frames": false,
+			"js": [
+				"js_ua_spoofer.js"
+			],
+			"matches": [
+				"https://exchange.robinhood.org/*"
+			],
+			"run_at": "document_start"
+		}
+	],
+	"homepage_url": "https://github.com/ghostwords/OWAFixer",
+	"permissions": [
+		"https://exchange.robinhood.org/*",
+		"webRequest",
+		"webRequestBlocking"
+	]
+}
